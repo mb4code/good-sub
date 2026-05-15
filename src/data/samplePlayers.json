@@ -1,0 +1,131 @@
+[
+  {
+    "id": "p1",
+    "name": "Alex",
+    "desiredPositions": [
+      "Forward",
+      "Midfield"
+    ],
+    "sType": "S5"
+  },
+  {
+    "id": "p2",
+    "name": "Ben",
+    "desiredPositions": [
+      "Defense",
+      "Sweeper"
+    ],
+    "sType": "S4"
+  },
+  {
+    "id": "p3",
+    "name": "Casey",
+    "desiredPositions": [
+      "Midfield",
+      "Forward"
+    ],
+    "sType": "S4"
+  },
+  {
+    "id": "p4",
+    "name": "Drew",
+    "desiredPositions": [
+      "Defense"
+    ],
+    "sType": "S3"
+  },
+  {
+    "id": "p5",
+    "name": "Eli",
+    "desiredPositions": [
+      "Goalie",
+      "Defense"
+    ],
+    "sType": "S5"
+  },
+  {
+    "id": "p6",
+    "name": "Finn",
+    "desiredPositions": [
+      "Forward"
+    ],
+    "sType": "S3"
+  },
+  {
+    "id": "p7",
+    "name": "Gray",
+    "desiredPositions": [
+      "Midfield"
+    ],
+    "sType": "S4"
+  },
+  {
+    "id": "p8",
+    "name": "Hayden",
+    "desiredPositions": [
+      "Defense",
+      "Midfield"
+    ],
+    "sType": "S2"
+  },
+  {
+    "id": "p9",
+    "name": "Indy",
+    "desiredPositions": [
+      "Forward",
+      "Midfield"
+    ],
+    "sType": "S3"
+  },
+  {
+    "id": "p10",
+    "name": "Jules",
+    "desiredPositions": [
+      "Defense",
+      "Sweeper"
+    ],
+    "sType": "S4"
+  },
+  {
+    "id": "p11",
+    "name": "Kai",
+    "desiredPositions": [
+      "Midfield"
+    ],
+    "sType": "S5"
+  },
+  {
+    "id": "p12",
+    "name": "Logan",
+    "desiredPositions": [
+      "Forward"
+    ],
+    "sType": "S2"
+  },
+  {
+    "id": "p13",
+    "name": "Morgan",
+    "desiredPositions": [
+      "Defense"
+    ],
+    "sType": "S3"
+  },
+  {
+    "id": "p14",
+    "name": "Noah",
+    "desiredPositions": [
+      "Goalie",
+      "Sweeper"
+    ],
+    "sType": "S4"
+  },
+  {
+    "id": "p15",
+    "name": "Quinn",
+    "desiredPositions": [
+      "Midfield",
+      "Defense"
+    ],
+    "sType": "S3"
+  }
+]

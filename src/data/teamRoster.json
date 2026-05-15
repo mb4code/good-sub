@@ -1,0 +1,161 @@
+[
+  {
+    "id": "p1",
+    "name": "Estella",
+    "desiredPositions": [
+      "Forward"
+    ],
+    "sType": "S3"
+  },
+  {
+    "id": "p2",
+    "name": "DeVonte",
+    "desiredPositions": [
+      "Forward"
+    ],
+    "sType": "S5"
+  },
+  {
+    "id": "p3",
+    "name": "Eden",
+    "desiredPositions": [
+      "Forward",
+      "Midfield"
+    ],
+    "sType": "S2"
+  },
+  {
+    "id": "p4",
+    "name": "Brandon",
+    "desiredPositions": [
+      "Forward"
+    ],
+    "sType": "S1"
+  },
+  {
+    "id": "p5",
+    "name": "Wesley",
+    "desiredPositions": [
+      "Goalie",
+      "Defense"
+    ],
+    "sType": "S4"
+  },
+  {
+    "id": "p6",
+    "name": "Serena",
+    "desiredPositions": [
+      "Midfield"
+    ],
+    "sType": "S3"
+  },
+  {
+    "id": "p7",
+    "name": "Jamison",
+    "desiredPositions": [
+      "Midfield"
+    ],
+    "sType": "S2"
+  },
+  {
+    "id": "p8",
+    "name": "Royalty",
+    "desiredPositions": [
+      "Midfield"
+    ],
+    "sType": "S1"
+  },
+  {
+    "id": "p9",
+    "name": "Amariaeae",
+    "desiredPositions": [
+      "Midfield"
+    ],
+    "sType": "S1"
+  },
+  {
+    "id": "p10",
+    "name": "Isaiah",
+    "desiredPositions": [
+      "Defense",
+      "Sweeper",
+      "Midfield"
+    ],
+    "sType": "S5"
+  },
+  {
+    "id": "p11",
+    "name": "LaTrell",
+    "desiredPositions": [
+      "Midfield",
+      "Forward"
+    ],
+    "sType": "S5"
+  },
+  {
+    "id": "p12",
+    "name": "Kendra",
+    "desiredPositions": [
+      "Sweeper",
+      "Defense"
+    ],
+    "sType": "S4"
+  },
+  {
+    "id": "p13",
+    "name": "Maggie",
+    "desiredPositions": [
+      "Defense"
+    ],
+    "sType": "S2"
+  },
+  {
+    "id": "p14",
+    "name": "Kelsee",
+    "desiredPositions": [
+      "Defense"
+    ],
+    "sType": "S2"
+  },
+  {
+    "id": "p15",
+    "name": "Nick",
+    "desiredPositions": [
+      "Midfield",
+      "Defense"
+    ],
+    "sType": "S3"
+  },
+  {
+    "id": "p-1778878304502",
+    "name": "Peyton",
+    "desiredPositions": [
+      "Defense"
+    ],
+    "sType": "S2"
+  },
+  {
+    "id": "p-1778878307112",
+    "name": "Elias",
+    "desiredPositions": [
+      "Defense"
+    ],
+    "sType": "S3"
+  },
+  {
+    "id": "p-1778878308341",
+    "name": "Jordyn",
+    "desiredPositions": [
+      "Defense"
+    ],
+    "sType": "S2"
+  },
+  {
+    "id": "p-1778878441167",
+    "name": "Aaron",
+    "desiredPositions": [
+      "Goalie"
+    ],
+    "sType": "S5"
+  }
+]
