@@ -1,7 +1,7 @@
 import { HALF_SECONDS, formatClock, secondsFromMinuteInput } from '../utils/time.js';
 import { pauseClock, setClock, startClock } from '../utils/gameState.js';
 
-export default function GameClock({ game, playersById, setGame, onFinish, onResetClock, onResume, onClearGame }) {
+export default function GameClock({ game, playersById, setGame, onResetClock, onResume, onClearGame }) {
   const half = game.elapsedSeconds < HALF_SECONDS ? 'First half' : 'Second half';
   const fieldStrength = Object.values(game.assignments || {}).reduce(
     (sum, playerId) => sum + (playersById[playerId]?.strength || 0),
@@ -21,7 +21,6 @@ export default function GameClock({ game, playersById, setGame, onFinish, onRese
         {!game.running && <button className="primary" onClick={() => setGame((current) => startClock(current))}>Start / Resume</button>}
         {game.running && <button onClick={() => setGame((current) => pauseClock(current))}>Pause</button>}
         <button onClick={() => setGame((current) => pauseClock(setClock(current, HALF_SECONDS, true)))}>Halftime</button>
-        <button onClick={onFinish}>Summary</button>
       </div>
       <details className="settings-menu">
         <summary>Settings</summary>

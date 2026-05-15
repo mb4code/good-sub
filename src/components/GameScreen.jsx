@@ -5,7 +5,7 @@ import FormationBoard from './FormationBoard.jsx';
 import GameClock from './GameClock.jsx';
 import PlayerCard from './PlayerCard.jsx';
 import StagingArea from './StagingArea.jsx';
-import { assignPlayer, closeActiveStints, pauseClock, removePlayer, setClock } from '../utils/gameState.js';
+import { assignPlayer, setClock } from '../utils/gameState.js';
 import { getGameMetrics } from '../utils/recommendations.js';
 
 export default function GameScreen({ roster, allPlayers, game, setGame, onFinish, onResume, onClearGame }) {
@@ -18,18 +18,12 @@ export default function GameScreen({ roster, allPlayers, game, setGame, onFinish
   );
 
   function handleDragEnd(event) {
-    const { playerId, source } = parsePlayerDragId(event.active.id);
+    const { playerId } = parsePlayerDragId(event.active.id);
     const overId = String(event.over?.id || '');
     const scrollPosition = { x: window.scrollX, y: window.scrollY };
     setActivePlayerId(null);
     if (!playerId) return;
     if (!overId) return;
-    if (overId === 'bench') {
-      if (source === 'field') {
-        setGame((current) => removeStagedPlayer(removePlayer(current, playerId), playerId));
-        restoreScrollPosition(scrollPosition);
-      }
-    }
     if (overId.startsWith('slot:')) {
       const slotId = overId.replace('slot:', '');
       setGame((current) => stageSub(current, slotId, playerId));
@@ -61,18 +55,12 @@ export default function GameScreen({ roster, allPlayers, game, setGame, onFinish
     setGame((current) => setClock({ ...current, running: false }, 0));
   }
 
-  function finishGame() {
-    setGame((current) => closeActiveStints(pauseClock(current)));
-    onFinish();
-  }
-
   return (
     <main className="screen game-screen">
       <GameClock
         game={game}
         playersById={playersById}
         setGame={setGame}
-        onFinish={finishGame}
         onResetClock={resetGameClock}
         onResume={onResume}
         onClearGame={onClearGame}

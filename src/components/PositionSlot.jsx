@@ -1,9 +1,8 @@
-import { useDraggable, useDroppable } from '@dnd-kit/core';
+import { useDroppable } from '@dnd-kit/core';
 import { MINIMUM_SECONDS, formatClock } from '../utils/time.js';
 
 export default function PositionSlot({ slot, player, stats, stagedPlayer, onCancelStage }) {
   const { isOver, setNodeRef } = useDroppable({ id: `slot:${slot.id}` });
-  const draggable = useDraggable({ id: player ? `player:${player.id}:field` : `empty:${slot.id}`, disabled: !player });
   const match = player?.desiredPositions.includes(slot.position);
   const activeStart = stats?.activeStint?.startGameTime;
   const currentStint = activeStart === undefined ? 0 : Math.max(0, stats.activeStint ? stats.liveElapsed - activeStart : 0);
@@ -23,10 +22,7 @@ export default function PositionSlot({ slot, player, stats, stagedPlayer, onCanc
       {player ? (
         <div className="slot-content">
           <div
-            ref={draggable.setNodeRef}
-            className="slot-player draggable-player"
-            {...draggable.listeners}
-            {...draggable.attributes}
+            className="slot-player field-player"
           >
             <span>{player.name}</span>
             <span className="badge">S{player.strength}</span>
