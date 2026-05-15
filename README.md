@@ -56,6 +56,7 @@ This app is designed for phone and tablet use during a live match:
 - One-tap **Apply** buttons on substitution recommendations
 - Drag-and-drop support for touch screens through `@dnd-kit/core`
 - Compact mobile cards so field, bench, and recommendations scan quickly
+- Running game clocks reconcile from wall-clock time when the phone wakes or the browser returns to focus
 
 For local mobile testing, run:
 

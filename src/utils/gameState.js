@@ -109,7 +109,7 @@ export function removePlayer(game, playerId) {
 export function tickGame(game, now = Date.now()) {
   if (!game.running) return game;
   const lastTickAt = game.lastTickAt || now;
-  const delta = Math.max(0, Math.min(5, (now - lastTickAt) / 1000));
+  const delta = Math.max(0, Math.min(GAME_SECONDS - game.elapsedSeconds, (now - lastTickAt) / 1000));
   if (delta <= 0) return { ...game, lastTickAt: now };
   const next = cloneGame(game);
   next.elapsedSeconds = Math.min(GAME_SECONDS, next.elapsedSeconds + delta);

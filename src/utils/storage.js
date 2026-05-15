@@ -16,7 +16,7 @@ export function loadGame() {
 
 export function saveGame(game) {
   if (!game) return;
-  localStorage.setItem(GAME_KEY, JSON.stringify({ ...game, running: false, lastTickAt: null }));
+  localStorage.setItem(GAME_KEY, JSON.stringify(game));
 }
 
 export function clearGame() {
@@ -71,7 +71,7 @@ function normalizeGame(value) {
     ...value,
     elapsedSeconds: Number.isFinite(value.elapsedSeconds) ? value.elapsedSeconds : 0,
     stagedSubs: value.stagedSubs && typeof value.stagedSubs === 'object' ? value.stagedSubs : {},
-    running: false,
-    lastTickAt: null
+    running: Boolean(value.running),
+    lastTickAt: Number.isFinite(value.lastTickAt) ? value.lastTickAt : null
   };
 }

@@ -10,7 +10,7 @@ import { createNewGame, tickGame, updateGameAttendance } from './utils/gameState
 const screens = ['team', 'attendance', 'game', 'summary'];
 
 export default function App() {
-  const initialGame = loadGame();
+  const initialGame = reconcileLoadedGame(loadGame());
   const [roster, setRoster] = useState(() => loadRoster(bundledRoster));
   const [game, setGame] = useState(() => initialGame);
   const [screen, setScreen] = useState(() => (initialGame ? 'game' : 'team'));
@@ -27,6 +27,22 @@ export default function App() {
     }, 1000);
     return () => window.clearInterval(timer);
   }, [game?.running]);
+
+  useEffect(() => {
+    function reconcileRunningClock() {
+      setGame((current) => (current?.running ? tickGame(current) : current));
+    }
+
+    window.addEventListener('focus', reconcileRunningClock);
+    document.addEventListener('visibilitychange', reconcileRunningClock);
+    window.addEventListener('pageshow', reconcileRunningClock);
+
+    return () => {
+      window.removeEventListener('focus', reconcileRunningClock);
+      document.removeEventListener('visibilitychange', reconcileRunningClock);
+      window.removeEventListener('pageshow', reconcileRunningClock);
+    };
+  }, []);
 
   const activePlayers = useMemo(
     () => roster.filter((player) => !game || game.attendanceIds.includes(player.id)),
@@ -91,4 +107,8 @@ export default function App() {
       {screen === 'summary' && game && <GameSummary roster={roster} game={game} />}
     </div>
   );
+}
+
+function reconcileLoadedGame(savedGame) {
+  return savedGame?.running ? tickGame(savedGame) : savedGame;
 }
