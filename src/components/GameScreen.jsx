@@ -70,6 +70,7 @@ export default function GameScreen({ roster, allPlayers, game, setGame, onFinish
         sensors={sensors}
         autoScroll={false}
         onDragStart={(event) => setActivePlayerId(parsePlayerDragId(event.active.id).playerId)}
+        onDragMove={handleDragMove}
         onDragEnd={handleDragEnd}
         onDragCancel={() => setActivePlayerId(null)}
       >
@@ -101,6 +102,24 @@ export default function GameScreen({ roster, allPlayers, game, setGame, onFinish
       </DndContext>
     </main>
   );
+}
+
+function handleDragMove(event) {
+  const rect = event.active.rect.current.translated;
+  if (!rect) return;
+
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+  const leftColumnLimit = window.innerWidth * 0.55;
+  const edgeSize = 72;
+
+  if (centerX > leftColumnLimit) return;
+
+  if (centerY < edgeSize) {
+    window.scrollBy({ top: -14, behavior: 'auto' });
+  } else if (centerY > window.innerHeight - edgeSize) {
+    window.scrollBy({ top: 14, behavior: 'auto' });
+  }
 }
 
 function stageSub(game, slotId, playerId) {

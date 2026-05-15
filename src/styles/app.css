@@ -248,7 +248,11 @@ nav, .button-row, .card-badges, .rec-impact { display: flex; gap: 0.5rem; flex-w
   white-space: nowrap;
 }
 .staged-row span { color: #66758d; }
-.staged-row button { min-height: 38px; padding: 0.4rem 0.65rem; }
+.staged-row button {
+  min-width: 34px;
+  min-height: 34px;
+  padding: 0.25rem;
+}
 .staging-actions { display: grid; grid-template-columns: 1fr 1fr; }
 .player-card { touch-action: none; cursor: grab; }
 .player-card.bench { background: #ffffff; border-color: #dce4ef; }
@@ -452,7 +456,11 @@ nav, .button-row, .card-badges, .rec-impact { display: flex; gap: 0.5rem; flex-w
   }
   .staged-row strong { font-size: 0.72rem; }
   .staged-row span { font-size: 0.62rem; }
-  .staged-row button { min-height: 28px; padding: 0.22rem 0.35rem; }
+  .staged-row button {
+    min-width: 26px;
+    min-height: 26px;
+    padding: 0.12rem;
+  }
   .staging-actions { grid-template-columns: 1fr 0.7fr; gap: 0.25rem; }
   .staged-inline { padding: 0.25rem; font-size: 0.68rem; gap: 0.25rem; }
   .staged-inline button { min-height: 28px; padding: 0.2rem 0.3rem; }

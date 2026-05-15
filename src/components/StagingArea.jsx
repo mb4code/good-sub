@@ -20,9 +20,9 @@ export default function StagingArea({ game, playersById, onApply, onClear, onRem
             return (
               <article className="staged-row" key={slotId}>
                 <div>
-                  <strong>{slot?.label || slotId}: {inPlayer.name} {'->'} {outPlayer?.name || 'empty slot'}</strong>
+                  <strong>{shortSlotLabel(slot)}: {inPlayer.name} {'->'} {outPlayer?.name || 'empty slot'}</strong>
                 </div>
-                <button onClick={() => onRemove(slotId)}>Remove</button>
+                <button aria-label={`Remove staged sub for ${slot?.label || slotId}`} title="Remove" onClick={() => onRemove(slotId)}>R</button>
               </article>
             );
           })}
@@ -34,4 +34,15 @@ export default function StagingArea({ game, playersById, onApply, onClear, onRem
       </div>
     </section>
   );
+}
+
+function shortSlotLabel(slot) {
+  if (!slot) return '';
+  if (slot.position === 'Goalie') return 'G';
+  if (slot.position === 'Sweeper') return 'SW';
+  const number = slot.label.match(/\d+/)?.[0] || '';
+  if (slot.position === 'Defense') return `D${number}`;
+  if (slot.position === 'Midfield') return `M${number}`;
+  if (slot.position === 'Forward') return `F${number}`;
+  return slot.label.slice(0, 2).toUpperCase();
 }
